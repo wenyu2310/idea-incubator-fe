@@ -7,6 +7,7 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
     const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         username: "",
         password: "",
@@ -19,12 +20,14 @@ const LoginForm = () => {
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
+        setIsLoading(true);
         try {
             const signedInUser = await signIn(formData);
             setUser(signedInUser);
             navigate("/");
         } catch (err) {
             setMessage(err.message);
+            setIsLoading(false);
         }
     };
 
@@ -62,8 +65,27 @@ const LoginForm = () => {
                             />
                         </div>
                         <div className="flex justify-between mt-8"> {/* Added mt-8 for button spacing */}
-                            <button className="btn bg-[#5EBB2B] text-white border-[#4eaa0c]">Log In</button>
-                            <button className="btn btn-ghost" onClick={() => navigate("/")}>Cancel</button>
+                            <button 
+                                className="btn bg-[#5EBB2B] text-white border-[#4eaa0c] relative"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? (
+                                    <>
+                                        <span className="inline-block w-4 h-4 border-2 border-transparent border-t-white border-r-white rounded-full animate-spin mr-2"></span>
+                                        Logging in...
+                                    </>
+                                ) : (
+                                    "Log In"
+                                )}
+                            </button>
+                            <button 
+                                type="button" 
+                                className="btn btn-ghost" 
+                                onClick={() => navigate("/")}
+                                disabled={isLoading}
+                            >
+                                Cancel
+                            </button>
                         </div>
                     </form>
                 </section>
@@ -73,3 +95,5 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+

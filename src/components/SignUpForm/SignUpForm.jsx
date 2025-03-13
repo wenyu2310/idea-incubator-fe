@@ -7,6 +7,7 @@ const SignUpForm = () => {
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext);
     const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -28,12 +29,14 @@ const SignUpForm = () => {
             return;
         }
 
+        setIsLoading(true);
         try {
             const newUser = await signUp(formData);
             setUser(newUser);
             navigate('/');
         } catch (err) {
             setMessage(err.message);
+            setIsLoading(false);
         }
     };
 
@@ -58,6 +61,7 @@ const SignUpForm = () => {
                                 onChange={handleChange}
                                 required
                                 className="mt-1 block w-full border-b-4 border-gray-300 focus:outline-none focus:ring-0"
+                                disabled={isLoading}
                             />
                         </div>
                         <div>
@@ -70,6 +74,7 @@ const SignUpForm = () => {
                                 onChange={handleChange}
                                 required
                                 className="mt-1 block w-full border-b-4 border-gray-300 focus:outline-none focus:ring-0"
+                                disabled={isLoading}
                             />
                         </div>
                         <div>
@@ -82,16 +87,29 @@ const SignUpForm = () => {
                                 onChange={handleChange}
                                 required
                                 className="mt-1 block w-full border-b-4 border-gray-300 focus:outline-none focus:ring-0"
+                                disabled={isLoading}
                             />
                         </div>
                         <div className="flex justify-between mt-8">
                             <button
                                 className="btn bg-[#5EBB2B] text-white border-[#4eaa0c]"
-                                disabled={isFormInvalid()}
+                                disabled={isFormInvalid() || isLoading}
                             >
-                                Sign Up
+                                {isLoading ? (
+                                    <>
+                                        <span className="inline-block w-4 h-4 border-2 border-transparent border-t-white border-r-white rounded-full animate-spin mr-2"></span>
+                                        Signing up...
+                                    </>
+                                ) : (
+                                    "Sign Up"
+                                )}
                             </button>
-                            <button className="btn btn-ghost" onClick={() => navigate('/')}>
+                            <button 
+                                type="button" 
+                                className="btn btn-ghost" 
+                                onClick={() => navigate('/')}
+                                disabled={isLoading}
+                            >
                                 Cancel
                             </button>
                         </div>
