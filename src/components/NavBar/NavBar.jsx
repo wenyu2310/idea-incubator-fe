@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import User from '../../assets/user.svg';
-import Idea from '../../assets/green-bulb1.svg'
+// import Idea from '../../assets/logo.png'
+import Wishes from '../../assets/wishes.png'
+import Idea from '../../assets/nparks-logo.svg'
 
 const NavBar = () => {
     const { user, setUser } = useContext(UserContext);
@@ -19,7 +21,8 @@ const NavBar = () => {
                     <div className="navbar-start">
                         <Link to="/" className="btn btn-ghost text-2xl">
                         <img src={Idea} alt="Idea Logo" className="h-10 mr-2" />
-                        <p className="text-2xl font-normal text-lime-600 mr-2">Ideas <span className="text-2xl font-bold  mr-2">Incubator</span></p>
+                        <img src={Wishes} alt="Wishes Logo" className="h-10 mr-2" />
+                        {/* <p className="text-2xl font-normal text-lime-600 mr-2"> <span className="text-2xl font-bold  mr-2">WISHES</span></p> */}
                         </Link>
                     </div>
                     <div className="flex space-x-4 items-center">
@@ -45,7 +48,8 @@ const NavBar = () => {
                     <div className="navbar-start">
                         <Link to="/" className="btn btn-ghost text-2xl">
                         <img src={Idea} alt="Idea Logo" className="h-10 mr-2" />
-                        <p className="text-2xl font-normal text-lime-600 mr-2">Ideas <a className="text-2xl font-bold  mr-2">Incubator</a></p>
+                        <img src={Wishes} alt="Wishes Logo" className="h-10 mr-2" />
+                        {/* <p className="text-2xl font-normal text-lime-600 mr-2"> <span className="text-2xl font-bold  mr-2">WISHES</span></p> */}
                         </Link>
                     </div>
 

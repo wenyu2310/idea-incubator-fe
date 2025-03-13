@@ -21,7 +21,7 @@ const IdeaList = ({ ideas }) => {
                  
                         <Link
                             to="/ideas/new"
-                            className="py-3 px-6 text-lg rounded-full text-white text-bold bg-gradient-to-b from-violet-200 to-lime-300 hover:from-violet-400 hover:to-lime-600"
+                            className="py-3 px-6 text-lg rounded-full text-white font-bold bg-gradient-to-b from-violet-200 to-lime-300 hover:from-violet-400 hover:to-lime-600"
                         >
                             + Share a new idea
                         </Link>

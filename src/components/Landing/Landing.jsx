@@ -1,10 +1,12 @@
 import React from 'react';
-import ideaincLogo from '../../assets/green-bulb1.svg';
+import ideaincLogo from '../../assets/logo.png';
 import ideaLogo from '../../assets/bulb-idea-light.svg';
 import feedback from '../../assets/feedback.svg';
 import voting from '../../assets/voteinfo.svg';
 import man from '../../assets/man.svg';
 import woman from '../../assets/woman.svg';
+// import Wishes from '../../assets/wishes.png'
+import Wishes from '../../assets/wishes2.png'
 import { Link } from 'react-router-dom'
 
 
@@ -14,11 +16,12 @@ const Landing = () => {
           {/* Hero Section */}
           <section className="bg-gradient-to-r from-lime-100 tobg-lime-100 p-8 text-center">
           <div className="text-center">
-                      <img src={ideaincLogo} alt="Idea Sharing" className="mx-auto h-50 mb-4" />
+                      <img src={ideaincLogo} alt="Idea Sharing" className="mx-auto h-50 " />
+                      <img src={Wishes} alt="Idea Sharing" className="mx-auto h-20 mb-4" />
 
                   </div>
               <div className="max-w-3xl mx-auto">
-                  <h1 className="text-4xl text-green-600 mb-4">Ideas <span className="text-4xl font-bold mb-4">Incubator</span></h1>
+                  {/* <h1 className="text-4xl text-green-600 mb-4"> <span className="text-4xl font-bold mb-4">W I S H E S</span></h1> */}
 
                   <h1 className="text-4xl font-bold mb-4"></h1>
                   {/* <p className="text-lg text-gray-700 mb-8">
