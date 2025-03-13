@@ -54,7 +54,7 @@ const App =()=> {
   return(
     <>
       <NavBar />
-      <title>Ideas Incubator</title>
+      <title>NParks Wishes</title>
       <Routes>
         <Route path='/' element= {user ? <Dashboard ideas={ideas}/> :<Landing />}/>
         {user? ( 
