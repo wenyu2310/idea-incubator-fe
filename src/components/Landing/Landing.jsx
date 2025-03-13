@@ -78,22 +78,22 @@ const Landing = () => {
           <section className="py-16">
               <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
                   <div className="border rounded-lg p-6">
-                      <p className="text-gray-700 mb-4">"Idea has transformed how we gather feedback. The anonymity feature has been invaluable."</p>
+                      <p className="text-gray-700 mb-4">"WISHES has transformed how we gather feedback. The anonymity feature has been invaluable."</p>
                       <div className="flex items-center mt-4">
                           <img src={woman} alt="Sarah Chen" className="h-10 w-10 rounded-full mr-4" />
                           <div>
                               <h4 className="font-semibold">Sarah Chen</h4>
-                              <p className="text-sm text-gray-600">Innovation Manager</p>
+                              <p className="text-sm text-gray-600">IT Deputy Director</p>
                           </div>
                       </div>
                   </div>
                   <div className="border rounded-lg p-6">
-                      <p className="text-violet-50 mb-4">"The voting and discussion features have really streamlined our idea process."</p>
+                      <p className="mb-4">"The voting and discussion features have really streamlined our idea process."</p>
                       <div className="flex items-center mt-4">
                           <img src={man} alt="David Lee" className="h-10 w-10 rounded-full mr-4" />
                           <div>
                               <h4 className="font-semibold">David Lee</h4>
-                              <p className="text-sm text-gray-600">Product Development Lead</p>
+                              <p className="text-sm text-gray-600">Park Manager</p>
                           </div>
                       </div>
                   </div>
